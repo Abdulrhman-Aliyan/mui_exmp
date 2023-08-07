@@ -11,6 +11,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SideBar from './SideBar';
 import LayoutContent from './LayoutContent';
 import UpperBar from './UpperBar';
+import TestComp from './TestComp';
+import Chat from './Chat';
 
 const drawerWidth = 240;
 
@@ -46,10 +48,9 @@ export default function Layout() {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <UpperBar handleDrawerOpen={handleDrawerOpen} open={open}/>
-
       <SideBar  handleDrawerClose={handleDrawerClose} open={open} />
-
       <LayoutContent open={open} />
+      <Chat /> 
     </Box>
   );
 }
