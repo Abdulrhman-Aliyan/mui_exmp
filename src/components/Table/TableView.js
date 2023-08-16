@@ -3,6 +3,7 @@ import { Button, ButtonGroup, Container, CssBaseline, Grid } from '@mui/material
 import HeadDialog from './HeadDialog';
 import DataDialog from './DataDialog';
 import DataTable from './DataTable';
+import { Margin } from '@mui/icons-material';
 
 function TableView() {
   const [columnDialogOpen, setColumnDialogOpen] = useState(false);
@@ -38,14 +39,12 @@ function TableView() {
     <>
       <Grid container spacing={2} justifyContent="center">
         <Grid item xs={12}>
-            <ButtonGroup>
                 <Button variant="contained" color="primary" onClick={handleColumnDialogOpen} style={{display: (columnNames.length <= 0 ) ? 'inline':'none'}}>
                     Set Column Names
                 </Button>
                 <Button variant="contained" color="primary" onClick={handleDataEntryDialogOpen}>
                     Add Data
                 </Button>
-            </ButtonGroup>
         </Grid>
         <Grid item xs={12}>
           < DataTable data={data} columnNames={columnNames} />

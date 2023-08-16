@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Visibility, VisibilityOff} from '@mui/icons-material';
 import { TextField, MenuItem, InputAdornment, FormControl, InputLabel, OutlinedInput, IconButton } from '@mui/material';
 
@@ -6,15 +6,16 @@ const defaultSx = {
   width: '100%',
 }
 
-const TextFieldDwt = ({label, sx}) => {
+const TextFieldDwt = ({label, sx, type}) => {
   const setLabel = (label === undefined) ? '' : label;
+  const setType = (type === undefined) ? 'text' : type;
 
   return (
-    <TextField id="outlined-basic" label={setLabel} sx={{...sx, ...defaultSx}} variant="outlined" />
+    <TextField id="outlined-basic" label={setLabel} sx={{...sx, ...defaultSx}} variant="outlined" type = {setType}/>
   )
 };
 
-const SelectDwt = ({label, selectItems, sx}) => {
+const SelectDwt = ({label, selectItems, sx, type}) => {
   
 const currencies = [
   {
@@ -30,6 +31,7 @@ const currencies = [
 
 const setItems = (selectItems === undefined) ? currencies : selectItems;
 const setLabel = (label === undefined) ? 'select' : label;
+const setType = (type === undefined) ? 'text' : type;
 
 return (
     <TextField
@@ -39,6 +41,7 @@ return (
       label = {label}
       defaultValue = { setItems[0]['value'] }
       helperText = "Please select your currency"
+      type= {setType}
     >
       {setItems.map((option) => (
         <MenuItem key={option.value} value={option.value}>
@@ -50,10 +53,11 @@ return (
 };
 
 
-const MeasureFieldDwt = ({label, measure, sx, start}) => {
+const MeasureFieldDwt = ({label, measure, sx, start, type}) => {
   
   const setLabel = (label === undefined) ? 'select' : label;
-  const setMeasure = (measure === undefined) ? 'kg' : measure
+  const setMeasure = (measure === undefined) ? 'kg' : measure;
+  const setType = (type === undefined) ? 'text' : type;
   const inputProps = start
     ? { startAdornment: <InputAdornment position="start">{setMeasure}</InputAdornment> }
     : { endAdornment: <InputAdornment position="end">{setMeasure}</InputAdornment> };
@@ -62,7 +66,8 @@ const MeasureFieldDwt = ({label, measure, sx, start}) => {
     <TextField
       label = {label}
       sx = {{ ...defaultSx, ...sx}}
-      InputProps= {inputProps}
+      InputProps = {inputProps}
+      type = {setType}
     />
     )
   };
@@ -77,7 +82,7 @@ const MeasureFieldDwt = ({label, measure, sx, start}) => {
     const handleMouseDownPassword = (event) => {
       event.preventDefault();
   };
-
+  
     const setLabel = (label === undefined) ? 'select' : label;
 
   
@@ -86,7 +91,7 @@ const MeasureFieldDwt = ({label, measure, sx, start}) => {
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? 'Text' : 'password'}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
