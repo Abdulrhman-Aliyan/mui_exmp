@@ -9,21 +9,23 @@ import {
   Paper,
 } from '@mui/material';
 
-function DataTable({ data }) {
+function DataTable({ data, columnNames }) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{width: '100%'}}>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Property 1</TableCell>
-            <TableCell>Property 2</TableCell>
+            {columnNames.map((columnName) => (
+              <TableCell key={columnName}>{columnName}</TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
           {data.map((row, index) => (
             <TableRow key={index}>
-              <TableCell>{row.property1}</TableCell>
-              <TableCell>{row.property2}</TableCell>
+              {columnNames.map((columnName) => (
+                <TableCell key={columnName}>{row[columnName]}</TableCell>
+              ))}
             </TableRow>
           ))}
         </TableBody>

@@ -4,7 +4,7 @@ import TableDwt from './FormComponents/TableDwt';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import TestTableView from './FormComponents/TestTableView';
+import TableView from './Table/TableView';
 
 
 const FormLayout = () => {
@@ -103,14 +103,14 @@ const FormLayout = () => {
         </Grid>
 
         <Grid item xs={3} >
-            <PasswordDwt label = 'password' start sx={{width:'200px'}} />
+            <PasswordDwt label = 'password' start sx={{width:'100%'}} />
         </Grid>
 
       </Grid>
 
       <TableDwt />
 
-      <TestTableView />
+      <TableView />
 
     </div>
   )
