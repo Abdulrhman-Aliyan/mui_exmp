@@ -3,6 +3,7 @@ import { styled, useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import UpperBarSpace from './UpperBarSpace';
 import FormLayout from './FormLayout';
+import TabsDwt from './FormComponents/TabsDwt/TabsDwt';
 
 const drawerWidth = 240;
 
@@ -38,7 +39,7 @@ const LayoutContent = ({open}) => {
   return (
     <Main open={open}>
         <UpperBarSpace />
-        <FormLayout />
+        <TabsDwt />
     </Main>
   )
 }
