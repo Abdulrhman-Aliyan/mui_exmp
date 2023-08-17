@@ -1,5 +1,8 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import FormLayout from '../../FormLayout';
 import TabPanelDwt from './TabPanelDwt';
@@ -11,14 +14,14 @@ export default function TabsDwt() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-};
+  };
 
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <TabDwt label="Item One" index={0} />
-          <TabDwt label="Item Two" index={1} />
+          <TabDwt label="Item One" index = {0} />
+          <TabDwt label="Item Two" index = {1} />
         </Tabs>
       </Box>
       <TabPanelDwt value={value} index={0}>

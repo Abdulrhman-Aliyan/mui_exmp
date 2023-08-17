@@ -11,9 +11,7 @@ function a11yProps(index) {
 
 const TabDwt = ({index,label}) => {
   return (
-    <>
         <Tab label={label} {...a11yProps(index)} />
-    </>
   )
 }
 
