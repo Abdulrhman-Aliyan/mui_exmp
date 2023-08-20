@@ -9,9 +9,13 @@ function a11yProps(index) {
     };
 }
 
-const TabDwt = ({index,label}) => {
+const TabDwt = ({index = 0,label,onSelectTab}) => {
+    const handleClick = () => {
+        onSelectTab(index);
+    };
+
   return (
-        <Tab label={label} {...a11yProps(index)} />
+    <Tab label={label} {...a11yProps(index)}  onClick={handleClick} />
   )
 }
 
