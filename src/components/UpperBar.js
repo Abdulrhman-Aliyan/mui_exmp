@@ -4,7 +4,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-
+import BadgeDwt from './Extensions/BadgeDwt';
 import MenuIcon from '@mui/icons-material/Menu';
 import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
@@ -70,18 +70,22 @@ const handleCloseUserMenu = () => {
               <MenuIcon />
             </IconButton>
             
-            <IconButton aria-label="delete"  color="inherit">
+            <IconButton  color="inherit">
              <EmailOutlinedIcon/>
             </IconButton>
 
-            <TextSize/>
+            <IconButton  color="inherit">
+              <BadgeDwt badgeContent={1000} size='sm'>
+                <TextSize/>
+              </BadgeDwt>
+            </IconButton>
 
-            <IconButton aria-label="delete"  color="inherit">
+            <IconButton  color="inherit">
              <GroupsOutlinedIcon />
             </IconButton>
 
-            <IconButton aria-label="delete"  color="inherit">
-             <StarRateRoundedIcon size="inherit" sx={{color: yellow[700]}}/>
+            <IconButton  color="inherit">
+              <StarRateRoundedIcon size="inherit" sx={{color: yellow[700]}}/>
             </IconButton>
             
           </Box>

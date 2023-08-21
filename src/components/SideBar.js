@@ -13,6 +13,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { blueGrey, grey } from '@mui/material/colors';
 import { Box, Avatar, Typography, Toolbar } from '@mui/material';
+import { Outlet, Link } from "react-router-dom";
 
 
 const drawerWidth = 240;
@@ -71,25 +72,27 @@ const SideBar = ({handleDrawerClose, open}) => {
 
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem key={text} disablePadding sx={{px: '15px'}}>
+              <>
+              <ListItem key={text} disablePadding sx={{ px: '15px' }}>
                 <ListItemButton
-                sx={{
-                  borderRadius: '5px',
-                  '&: hover' : {
-                    backgroundColor: grey.A700,
-                  }
-                }}
-                >
-                  <ListItemIcon 
                   sx={{
-                    color: grey[400],
-                    width: '10px',
-                  }} >
-                    { index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }
+                    borderRadius: '5px',
+                    '&: hover': {
+                      backgroundColor: grey.A700,
+                    }
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      color: grey[400],
+                      width: '10px',
+                    }}>
+                    {index % 2 === 0 ? <InboxIcon />:<MailIcon />}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
-              </ListItem>
+              </ListItem><Outlet />
+              </>
             ))}
           </List>
         </Box>

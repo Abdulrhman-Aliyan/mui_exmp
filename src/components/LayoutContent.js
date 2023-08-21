@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import UpperBarSpace from './UpperBarSpace';
 import FormLayout from './FormLayout';
 import TabsDwt from './FormComponents/TabsDwt/TabsDwt';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -39,6 +40,12 @@ const LayoutContent = ({open}) => {
   return (
     <Main open={open}>
         <UpperBarSpace />
+          {/* <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<TabsDwt />} />
+              <Route path="blogs" element={<TabsDwt />} />
+            </Routes>
+          </BrowserRouter> */}
         <TabsDwt />
     </Main>
   )

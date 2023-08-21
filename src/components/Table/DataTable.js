@@ -19,7 +19,7 @@ function DataTable({ data, columnNames }) {
               <TableCell key={columnName}>{columnName}</TableCell>
             ))}
           </TableRow>
-        </TableHead>
+        </TableHead>  
         <TableBody>
           {data.map((row, index) => (
             <TableRow key={index}>

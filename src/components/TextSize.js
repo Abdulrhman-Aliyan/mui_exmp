@@ -63,9 +63,7 @@ export default function TextSize() {
     <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
         <React.Fragment>
-          <IconButton variant="contained" {...bindTrigger(popupState)}>
-            <TextFieldsRoundedIcon />
-          </IconButton>
+          <TextFieldsRoundedIcon  {...bindTrigger(popupState)}/>
           <Menu {...bindMenu(popupState)}>
           {/* <MenuItem sx={{pointerEvents: 'none'}} /> */}
             <MenuItem 
