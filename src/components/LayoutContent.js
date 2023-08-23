@@ -5,6 +5,9 @@ import UpperBarSpace from './UpperBarSpace';
 import FormLayout from './FormLayout';
 import TabsDwt from './FormComponents/TabsDwt/TabsDwt';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TestForm from "./pages/TestForm";
+import Testpage from "./pages/Testpage";
+ 
 
 const drawerWidth = 240;
 
@@ -40,13 +43,11 @@ const LayoutContent = ({open}) => {
   return (
     <Main open={open}>
         <UpperBarSpace />
-          {/* <BrowserRouter>
             <Routes>
-              <Route path="/" element={<TabsDwt />} />
-              <Route path="blogs" element={<TabsDwt />} />
+              <Route path="/*" element={<TestForm />} />
+              <Route path="/blogs" element={<Testpage />} />
             </Routes>
-          </BrowserRouter> */}
-        <TabsDwt />
+        {/* <TabsDwt /> */}
     </Main>
   )
 }

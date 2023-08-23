@@ -1,3 +1,5 @@
+import './SideBar.css';
+
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
@@ -12,9 +14,8 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { blueGrey, grey } from '@mui/material/colors';
-import { Box, Avatar, Typography, Toolbar } from '@mui/material';
+import { Box, Avatar, Typography, Toolbar, Tooltip } from '@mui/material';
 import { Outlet, Link } from "react-router-dom";
-
 
 const drawerWidth = 240;
 
@@ -31,7 +32,7 @@ const SideBar = ({handleDrawerClose, open}) => {
   const theme = useTheme();
 
   return (
-
+<>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -68,12 +69,13 @@ const SideBar = ({handleDrawerClose, open}) => {
         <Box sx={{mt:'30px'}}>
         
           <Typography variant="body1" color='secondary' fontWeight='700' fontSize='1.1em' sx={{mx: '20px'}}>My items</Typography>
-          <Typography variant="body2" sx={{color:grey[400], mx: '20px'}}>item to choose from </Typography>
+          <Typography variant="body2" sx={{ color:grey[400], mx: '20px' }}> item to choose from </Typography>
 
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <>
-              <ListItem key={text} disablePadding sx={{ px: '15px' }}>
+              < ListItem key={text} disablePadding sx={{px:'15px'}} >
+                <Link to={ index % 2 === 0 ? "/blogs":"/" } width={'100%'} className='sidebarListLink'>
                 <ListItemButton
                   sx={{
                     borderRadius: '5px',
@@ -82,22 +84,27 @@ const SideBar = ({handleDrawerClose, open}) => {
                     }
                   }}
                 >
+
                   <ListItemIcon
                     sx={{
                       color: grey[400],
                       width: '10px',
                     }}>
-                    {index % 2 === 0 ? <InboxIcon />:<MailIcon />}
+                    { index % 2 === 0 ? <InboxIcon /> : <MailIcon /> } 
                   </ListItemIcon>
                   <ListItemText primary={text} />
+                  
                 </ListItemButton>
-              </ListItem><Outlet />
+                </ Link>
+              </ListItem>
               </>
             ))}
-          </List>
+          </List> 
+
         </Box>
       </Drawer>
-
+      <Outlet />
+  </>
   );
 }
 
