@@ -1,5 +1,3 @@
-import './SideBar.css';
-
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
