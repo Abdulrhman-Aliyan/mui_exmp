@@ -1,3 +1,4 @@
+import './App.css'
 import Layout from './components/Layout'
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
 import TestComp from './components/TestComp';
@@ -12,5 +13,5 @@ function App() {
     </div>
   );
 }
-
+git
 export default App;
