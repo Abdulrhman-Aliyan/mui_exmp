@@ -25,7 +25,7 @@ export default function Layout() {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
         <UpperBar handleDrawerOpen={handleDrawerOpen} drawerWidth={drawerWidth} chatWidth={chatWidth} open={open}/>
-          <SideBar  handleDrawerClose={handleDrawerClose} open={open} />
+          <SideBar handleDrawerClose={handleDrawerClose} open={open} />
           <UpperBarSpace />
         <LayoutContent />
       <Chat /> 
